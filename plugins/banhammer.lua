@@ -323,7 +323,7 @@ return {
     "^([Bb]an)$",
     "^([Uu]nban)$",
     "^([Ii]d)$",
-    "^tgservice (.+)$"
+    "^!!tgservice (.+)$"
   },
   run = run,
   pre_process = pre_process
