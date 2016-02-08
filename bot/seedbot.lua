@@ -354,7 +354,8 @@ Group rules
 id
 return group id or user id
 
-help
+id chat
+return all group member id
 
 lock [member|name|bots|leave]	
 Locks [member|name|bots|leaveing] 
@@ -384,7 +385,7 @@ setowner [id]
 Will set id as owner
 
 setflood [value]
-Set [value] as flood sensitivity
+Set [value] as flood sensitivity '1 to 20'
 
 stats
 Simple message statistics
@@ -407,6 +408,9 @@ will return group logs
 
 banlist
 will return group ban list
+
+conv [text]
+make text to img
 
 **dont use "!" or "/"
 
