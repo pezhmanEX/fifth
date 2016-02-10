@@ -37,7 +37,7 @@ local function run(msg,matches)
     	redis:set("bot:photo", "waiting")
     	return 'Please send me bot photo now'
     end
-    if matches[1] == "markread" then
+    if matches[1] == "readmsg" then
     	if matches[2] == "on" then
     		redis:set("bot:markread", "on")
     		return "Mark read > on"
@@ -63,7 +63,7 @@ local function run(msg,matches)
     	unblock_user("user#id"..matches[2],ok_cb,false)
     	return "User unblocked"
     end
-    if matches[1] == "import" then
+    if matches[1] == "goto" then
     	local hash = parsed_url(matches[2])
     	import_chat_link(hash,ok_cb,false)
     end
@@ -72,11 +72,11 @@ end
 return {
   patterns = {
     "^(pm) (%d+) (.*)$",
-    "^(import) (.*)$",
+    "^(goto) (.*)$",
     "^(unblock) (%d+)$",
     "^(block) (%d+)$",
-	"^(markread) (on)$",
-	"^(markread) (off)$",
+	"^(readmsg) (on)$",
+	"^(readmsg) (off)$",
     "^(setbotphoto)$",
 	"%[(photo)%]"
   },
